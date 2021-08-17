@@ -4,7 +4,7 @@
 
 <script>
 
-    import { onMounted, onBeforeUnmount, ref, computed, inject, watchEffect } from 'vue';
+    import { onMounted, onBeforeUnmount, ref, computed, inject, watch, watchEffect } from 'vue';
 
     import { debounce, register, isBlank } from '@morioh/helper';
 
@@ -159,18 +159,18 @@
 
 
             onMounted(() => create());
-            watchEffect(() => create());
+            //watchEffect(() => create());
 
-            // watch(() => props.modelValue, (newValue, oldValue) => {
-            //     // console.log(props.modelValue, newValue, oldValue)
-            //     if (instance && newValue !== oldValue && newValue !== data) {
-            //         instance.setData(newValue);
-            //     }
-            // });
+            watch(() => props.modelValue, (newValue, oldValue) => {
+                // console.log(props.modelValue, newValue, oldValue)
+                if (instance && newValue !== oldValue && newValue !== data) {
+                    instance.setData(newValue);
+                }
+            });
 
-            // watch(() => props.disabled, (newValue, oldValue) => {
-            //     instance.isReadOnly = newValue;
-            // });
+            watch(() => props.disabled, (newValue, oldValue) => {
+                instance.isReadOnly = newValue;
+            });
 
             onBeforeUnmount(() => {
 

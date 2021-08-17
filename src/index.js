@@ -5,7 +5,7 @@ export default {
     install: function (vm, config) {
         vm.component(Editor.name, Editor);
         if (config) {
-            vm.provide('editor', options);
+            vm.provide('editor', config);
         }
     }
 };
