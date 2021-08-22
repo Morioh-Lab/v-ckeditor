@@ -4,7 +4,7 @@
 
 <script>
 
-    import { onMounted, onBeforeUnmount, ref, computed, inject, watch, watchEffect } from 'vue';
+    import { onMounted, onBeforeUnmount, ref, computed, inject, watch } from 'vue';
 
     import { debounce, register, isBlank } from '@morioh/helper';
 
@@ -110,16 +110,16 @@
             const create = () => {
                 const o = Object.assign({}, defaults, config, props.config, { initialData: props.modelValue || '' });
 
-                if (isBlank(o.CDN_CSS)) {
-                    throw new Error('Please config CDN_CSS');
-                }
+                // if (isBlank(o.CDN_CSS)) {
+                //     throw new Error('Please config CDN_CSS');
+                // }
 
-                if (isBlank(o.CDN_JS)) {
-                    throw new Error('Please config CDN_JS');
-                }
+                // if (isBlank(o.CDN_JS)) {
+                //     throw new Error('Please config CDN_JS');
+                // }
 
-                register('link', { id: 'ckeditor-css', href: o.CDN_CSS, type: 'text/css', rel: 'stylesheet' });
-                register('script', { id: 'ckeditor-js', src: o.CDN_JS, async: true }).then(() => {
+                register('link', { id: 'ckeditor-css', href: 'https://i.morioh.com/assets/ckeditor/v29/ckeditor.css', type: 'text/css', rel: 'stylesheet' });
+                register('script', { id: 'ckeditor-js', src: 'https://i.morioh.com/assets/ckeditor/v29/ckeditor.js', async: true }).then(() => {
 
                     CKEditor.create(root.value, o).then(editor => {
                         // Save the reference to the $_Editor for further use.
