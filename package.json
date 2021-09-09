@@ -1,6 +1,6 @@
 {
   "name": "@morioh/v-editor",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "CKEditor wrapper for Vue 3.0",
   "module": "./src/index.js",
   "main": "./dist/editor.min.js",

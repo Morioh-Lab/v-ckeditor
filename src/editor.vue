@@ -90,9 +90,10 @@
             const defaults = {
                 extraPlugins: [MentionCustomization],
                 // blockToolbar: ["heading", "|", "bulletedList", "numberedList", "|", "outdent", "indent", "blockQuote", "|", "insertImage", "codeBlock", "insertTable", "|", "undo", "redo", "removeFormat"],
-                blockToolbar: ["heading", "|", "bulletedList", "numberedList", "|", "outdent", "indent", "blockQuote", "|", "insertImage", "|", "undo", "redo", "removeFormat"],
-                // toolbar: { items: ["bold", "italic", "link"] },
-                toolbar: { items: ["heading", "|", "bold", "italic", "link", "|", "blockQuote", "insertImage"] },
+                blockToolbar: ["heading", "|", "bulletedList", "numberedList", "|", "outdent", "indent", "horizontalLine", "|", "blockQuote", "uploadImage", "|", "undo", "redo", "removeFormat"],
+                
+                toolbar: ["paragraph", "heading2", "heading3", "|", "bold", "italic", "link", "|", "blockQuote", "uploadImage"],
+
                 image: { toolbar: ["imageStyle:block", "|", "toggleImageCaption"] },
                 // table: { contentToolbar: ["tableColumn", "tableRow", "mergeTableCells", 'tableCellProperties', 'tableProperties'] },
                 placeholder: "Let's write an awesome story!",
@@ -118,8 +119,8 @@
                 //     throw new Error('Please config CDN_JS');
                 // }
 
-                register('link', { id: 'ckeditor-css', href: 'https://i.morioh.com/assets/ckeditor/v29/ckeditor.css', type: 'text/css', rel: 'stylesheet' });
-                register('script', { id: 'ckeditor-js', src: 'https://i.morioh.com/assets/ckeditor/v29/ckeditor.js', async: true }).then(() => {
+                register('link', { id: 'ckeditor-css', href: 'https://cdn.morioh.com/ckeditor/v29.2/ckeditor.css', type: 'text/css', rel: 'stylesheet' });
+                register('script', { id: 'ckeditor-js', src: 'https://cdn.morioh.com/ckeditor/v29.2/ckeditor.js', async: true }).then(() => {
 
                     CKEditor.create(root.value, o).then(editor => {
                         // Save the reference to the $_Editor for further use.
